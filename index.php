@@ -96,9 +96,9 @@ $result = $conn->query("SELECT * FROM proyectos ORDER BY created_at DESC");
     <div class="mb-5">
       <h2>Proyectos</h2>
       <hr>
-      <div class="container my-3 mx-4 d-flex flex-row">
+      <div class="container my-3 mx-4 d-flex flex-row flex-wrap">
         <?php while($row = $result->fetch_assoc()): ?>
-          <div class="border rounded p-3 mx-2 d-flex flex-column text-wrap col-2 shadow">
+          <div class="border border-2 rounded p-3 mx-2 d-flex flex-column text-wrap col-2 shadow-lg">
             <h3><?= $row['titulo'] ?></h3>
             <p><?= $row['descripcion'] ?></p>
             <img src="uploads/<?= $row['imagen'] ?>" width="150"><br>
