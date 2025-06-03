@@ -97,6 +97,7 @@ $result = $conn->query("SELECT * FROM proyectos ORDER BY created_at DESC");
       <h2>Proyectos</h2>
       <hr>
       <div class="container my-3 mx-4 d-flex flex-row flex-wrap">
+        <!-- Dar formato HTML/CSS a cada proyecto y mostrarlo en el contenedor div. -->
         <?php while($row = $result->fetch_assoc()): ?>
           <div class="border border-2 rounded p-3 mx-2 d-flex flex-column text-wrap col-2 shadow-lg">
             <h3><?= $row['titulo'] ?></h3>
@@ -124,7 +125,7 @@ $result = $conn->query("SELECT * FROM proyectos ORDER BY created_at DESC");
     
   <footer class="footer mt-auto py-3 bg-dark text-white text-center">
     <div class="container">
-      <span>placeholder</span>
+      <span>Footer.</span>
     </div>
   </footer>
 </body>

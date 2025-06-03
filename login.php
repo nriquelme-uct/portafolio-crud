@@ -1,7 +1,8 @@
 <?php
 session_start();
 include 'db.php';
-
+ 
+// Enviar solicitud de login.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST['username'];
   $password = md5($_POST['password']);

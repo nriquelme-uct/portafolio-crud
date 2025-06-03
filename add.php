@@ -2,6 +2,7 @@
 include 'auth.php';
 include 'db.php';
 
+// Procesar envío de proyecto.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $titulo = $_POST['titulo'];
   $descripcion = $_POST['descripcion'];
@@ -11,7 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $imagen = $_FILES['imagen']['name'];
   $tmp = $_FILES['imagen']['tmp_name'];
   move_uploaded_file($tmp, "uploads/$imagen");
-
+  
+  // Consulta SQL
   $sql = "INSERT INTO proyectos (titulo, descripcion, url_github, url_produccion, imagen) 
           VALUES ('$titulo', '$descripcion', '$url_github', '$url_produccion', '$imagen')";
 
