@@ -2,8 +2,11 @@
 include 'config.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
-$request = explode('/', trim($_SERVER['PATH_INFO'], '/'));
-$id = isset($request[0]) ? intval($request[0]) : null;
+//$request = explode('/', trim($_SERVER['PATH_INFO'], '/'));
+$request = isset($_SERVER['PATH_INFO']) ? explode('/', trim($_SERVER['PATH_INFO'], '/')) : [];
+
+//$id = isset($request[0]) ? intval($request[0]) : null;
+$id = isset($request[0]) && $request[0] !== '' ? intval($request[0]) : null;
 
 function getInput() {
     return json_decode(file_get_contents("php://input"), true);
